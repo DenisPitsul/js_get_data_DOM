@@ -13,7 +13,9 @@ const totalPopulation = populationNumberStr.reduce(
 
 const totalPopulationElem = document.querySelector('.total-population');
 
-totalPopulationElem.textContent = formatBigNumber(totalPopulation);
+if (totalPopulationElem) {
+  totalPopulationElem.textContent = formatBigNumber(totalPopulation);
+}
 
 const averagePopulationElem = document.querySelector('.average-population');
 
@@ -21,7 +23,9 @@ const averagePopulation = Math.round(
   totalPopulation / populationElements.length,
 );
 
-averagePopulationElem.textContent = formatBigNumber(averagePopulation);
+if (averagePopulationElem) {
+  averagePopulationElem.textContent = formatBigNumber(averagePopulation);
+}
 
 function formatBigNumber(number) {
   let formattedNumber = '';
